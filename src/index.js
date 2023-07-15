@@ -14,17 +14,14 @@ async function getData(location) {
     });
 }
 
-getData("Paris");
-
-function checkZipCodes(zip) {
-  return /^\d{5}(-\d{4})?$/.test(zip);
-}
+getData("San Deigo"); //Invalid
+getData("Paris"); //valid
 
 let submitLocation = (() => {
   let locationValue = document.querySelector(".location");
   let submitLocation = document.querySelector(".submit");
   submitLocation.addEventListener("click", (event) => {
-    console.log(checkZipCodes(locationValue.value));
+    console.log(getData(locationValue.value));
     event.preventDefault();
   });
 })();
