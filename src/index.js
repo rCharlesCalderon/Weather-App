@@ -2,7 +2,7 @@ const { truncate } = require("lodash");
 
 
 async function getData(location) {
-  let url = `http://api.weatherapi.com/v1/current.json?key=154bc563fa33473cb2f81254231307&q=${location}`;
+  let url = `https://api.weatherapi.com/v1/current.json?key=154bc563fa33473cb2f81254231307&q=${location}`;
   fetch(url, {
     mode: "cors",
   })
@@ -13,9 +13,6 @@ async function getData(location) {
       console.log(response);
     });
 }
-
-getData("San Deigo"); //Invalid
-getData("Paris"); //valid
 
 let submitLocation = (() => {
   let locationValue = document.querySelector(".location");
