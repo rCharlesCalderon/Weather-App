@@ -16,3 +16,16 @@ async function getData(location) {
 
 getData("Paris");
 
+function checkZipCodes(zip) {
+  return /^\d{5}(-\d{4})?$/.test(zip);
+}
+
+let submitLocation = (() => {
+  let locationValue = document.querySelector(".location");
+  let submitLocation = document.querySelector(".submit");
+  submitLocation.addEventListener("click", (event) => {
+    console.log(checkZipCodes(locationValue.value));
+    event.preventDefault();
+  });
+})();
+
