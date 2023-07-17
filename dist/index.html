@@ -5,10 +5,56 @@
     <title>Asset Management</title>
    </head>
    <body>
-   <form>
-    <input type = "text" class="location">
-    <button type="submit" class="submit">submit</button>
-   </form>
+    <header> 
+      <input type="text" id="location" placeholder="Enter location">
+      <img src = "../src/images/search.svg" class="search-icon">
+   </header>
+      <!--LOCATION INFO-->
+   <section id="weather-data-container">
+    <section class="box1">
+      <div class="location-container"> 
+        <div class="location-img-container"><img src="../src/images/iconizer-location_on_FILL1_wght400_GRAD0_opsz48.svg" class="location-img"></div>
+        <div class="location-info-container">
+          <span>Location</span>
+          <span>San Deigo, California</span>
+        </div>
+      </div>
+         <!--LOCATION END-->
+      <!--TEMP INFO-->
+        <div class="temperature-container"> 
+        <div class="temperature-img-container"><img src="../src/images/iconizer-device_thermostat_FILL1_wght100_GRAD-25_opsz48.svg" class="location-img"></div>
+        <div class="temperature-info-container">
+          <span>Temperature</span>
+          <span>59°F</span>
+        </div>
+      </div>
+         <!--TEMP END-->
+         <!--TEMP CONVERT START-->
+         <div class="temp-convert-container">
+          <button class="temp-convert">°F</button>
+          <button class="temp-convert">°C</button>
+         </div>
+          <!--TEMP CONVERT END-->
+    </section> 
+
+    <section class="box2"></section>
+
+
+
+    <section class="box3">
+          <!--CONDITION START-->
+      <div class="condition-container">
+        <div class="condition-img"><img src="../src/images/iconizer-routine_FILL1_wght100_GRAD-25_opsz48.svg"></div>
+        <div class="condition-info-container"><span>Condition</span>  <span>Clear</span> 
+        </div>
+        <!--CONDITION END-->
+      
+    </section>
+  
+   
+    
+
+   </section>
     <script src="bundle.js"></script>
    </body>
  </html>
