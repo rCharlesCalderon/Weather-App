@@ -1,12 +1,13 @@
 const { truncate } = require("lodash");
 import "./style.css";
 import { locationData } from "./weatherData";
-import { temperatureData } from "./weatherData";
+import { temperatureDataF } from "./weatherData";
 import { weatherCondition } from "./weatherData";
 import { weatherFeeling } from "./weatherData";
 import { weatherHumidity } from "./weatherData";
 import { windSpeed } from "./weatherData";
 import { weatherGif } from "./weatherData";
+getData("Paris");
 
 async function getData(location) {
   let url = `https://api.weatherapi.com/v1/current.json?key=154bc563fa33473cb2f81254231307&q=${location}`;
@@ -26,7 +27,7 @@ async function getData(location) {
 
 function displayData(response) {
   locationData(response);
-  temperatureData(response);
+  temperatureDataF(response);
   weatherGif(response);
   weatherCondition(response);
   weatherFeeling(response);
@@ -34,11 +35,18 @@ function displayData(response) {
   windSpeed(response);
 }
 
-let submitLocation = (() => {
+let tempButtons = (() => {
+  let leftButton = document.querySelector(".fahrenheit");
+  leftButton.addEventListener("click", () => {
+    //How to get response?????
+  });
+})();
+
+let location = (() => {
   let locationValue = document.querySelector("#location");
   let submitLocation = document.querySelector(".search-icon");
   submitLocation.addEventListener("click", (event) => {
-    console.log(getData(locationValue.value));
+    getData(locationValue.value);
     event.preventDefault();
   });
 })();

@@ -3,7 +3,7 @@ export function locationData(response) {
   let location = document.querySelector(".location");
   location.textContent = `${response.location.name}, ${response.location.country}`;
 }
-export function temperatureData(response) {
+export function temperatureDataF(response) {
   let temperature = document.querySelector(".temperature");
   temperature.textContent = `${response.current.temp_f}°F`;
 }
@@ -26,6 +26,4 @@ export function windSpeed(response) {
 
 export function weatherGif(response) {
   let img = document.querySelector(".weather-gif");
-  img.src = response.current.condition.icon;
-  console.log(response.current.condition.icon);
 }
