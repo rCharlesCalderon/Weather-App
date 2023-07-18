@@ -1,0 +1,290 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+
+}
+@font-face {
+    font-family: Rubik;
+    src: url("../src/fonts/Rubik-Regular.ttf");
+}
+body{
+    height: 100vh;
+    background-image: url("./images/blueSky.png");
+       background-repeat: no-repeat;
+        background-size: 100% 100%;
+}
+header{
+    display: flex;
+    border: 1px green solid;
+    height: 6vh;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+#location {
+    border-radius: 25px;
+    border-style: none;
+    height: 29px;
+    width: 220px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    padding-left: 10px;
+    font-size: 1.1em;
+}
+#location::placeholder{
+    color: white;
+    margin-left: 5px;
+    opacity: 0.7;
+}
+
+.search-icon{
+    height: 27px;
+    color: white;
+}
+
+#weather-data-container{
+    display: flex;
+    border: 1px red solid;
+    height: 50%;
+}
+/* Weather Infomation styling / top section */
+.box1{
+    border: 1px green solid;
+    width: 33.33%;
+}
+/* location styling */
+.location-container {
+    display: flex;
+    border: 1px black solid;
+    width: 100%;
+    height: 13%;
+    justify-content: center;
+
+}
+.location-img-container{
+    border: 1px green solid;
+    margin-left: 127px;
+ 
+}
+.location-img{
+    margin-top: 8px;
+    height: 40px;
+}
+.location-info-container{
+    display: flex;
+    border: 1px red solid;
+    flex-direction: column;
+    width: 60%;
+    color: white;
+    font-family: Rubik;
+    justify-content: center;
+}
+.location-info-container span:nth-child(1){
+    font-size: 1em;
+}
+.location-info-container span:nth-child(2){
+    font-size: 1.4em;
+    letter-spacing: 1px;
+
+}
+/* END location styling */
+/* Temperature stlying  DUPLICATE OF LOCATION STYLES MOSTLY*/
+.temperature-container{
+  display: flex;
+    border: 1px black solid;
+    width: 100%;
+    height: 15%;
+    justify-content: center;
+}
+.temperature-img-container{
+    border: 1px green solid;
+}
+.tempurature-img{
+   border: 1px green solid;
+   height: 55px;
+}
+.temperature-info-container{
+    display: flex;
+    border: 1px red solid;
+    flex-direction: column;
+    width: 40%;
+    color: white;
+    font-family: Rubik;
+}
+.temperature-container span:nth-child(1){
+    font-size: 1em;
+}
+.temperature-container span:nth-child(2){
+    font-size: 1.6em;
+    letter-spacing: 1px;
+
+}
+
+/* Temperature END */
+
+/*temp convert styling */
+.temp-convert-container{
+    display: flex;
+    border: 1px green solid;
+    height: 12%;
+    justify-content: center;
+    gap: 5px;
+    width: fit-content;
+    margin-left: 171px;
+}
+.temp-convert{
+    width: 50px;
+    height: 45px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    font-family: Rubik;
+    font-size: 1.3em;
+}
+/* temp convert END */
+/* END of top weather Info styling */
+
+
+
+
+.box2{
+    display: flex;
+    border: 1px blue solid;
+    width: 33.33%;
+    justify-content: center;
+  
+
+}
+
+/*  Weather Stats START  */
+.box3{
+    display: flex;
+    border: 1px black solid;
+     width: 33.33%;
+     flex-direction: column;
+  
+}
+/* Weather condition START */ 
+.condition-container{
+    display: flex;
+    border: 1px red solid;
+    height: 15%;
+   align-items: center;
+}
+.condition-img{
+    height: 55px;
+}
+.condition-info-container{
+       display: flex;
+    border: 1px red solid;
+    flex-direction: column;
+    color: white;
+    font-family: Rubik;
+    height: 100%;
+    width: 90%;
+    margin-left: 3px;
+}
+.condition-info-container span:nth-child(1){
+    font-size: 1em;
+}
+.condition-info-container span:nth-child(2){
+    font-size: 1.4em;
+    letter-spacing: 1px;
+
+}
+/* Weather condition END */
+/*  Feels like Data */
+.feels-like-container{
+       display: flex;
+    border: 1px red solid;
+    height: 15%;
+   align-items: center;
+}
+.feels-like-img{
+     height: 55px;
+}
+.feels-info-container{
+    display: flex;
+    border: 1px red solid;
+    flex-direction: column;
+    color: white;
+    font-family: Rubik;
+    height: 100%;
+    width: 90%;
+    margin-left: 3px;
+}
+.feels-like-container span:nth-child(1){
+    font-size: 1em;
+}
+.feels-like-container span:nth-child(2){
+    font-size: 1.4em;
+    letter-spacing: 1px;
+
+}
+/*  Feels like Data END */
+/* Humidity INFO  */
+
+.humidity-container{
+       display: flex;
+    border: 1px red solid;
+    height: 15%;
+   align-items: center;
+}
+.humidity-img{
+      height: 55px;
+}
+.humidity-info-container{
+      display: flex;
+    border: 1px red solid;
+    flex-direction: column;
+    color: white;
+    font-family: Rubik;
+    height: 100%;
+    width: 90%;
+    margin-left: 3px;
+}
+.humidity-container span:nth-child(1){
+    font-size: 1em;
+}
+.humidity-container span:nth-child(2){
+    font-size: 1.4em;
+    letter-spacing: 1px;
+
+}
+/* Humidity INFO END */
+/* Wind INFO START */
+.wind-container{
+      display: flex;
+    border: 1px red solid;
+    height: 15%;
+   align-items: center;
+}
+.wind-img{
+    height: 55px;
+}
+.wind-speed-container{
+       display: flex;
+    border: 1px red solid;
+    flex-direction: column;
+    color: white;
+    font-family: Rubik;
+    height: 100%;
+    width: 90%;
+    margin-left: 3px;
+}
+.wind-container span:nth-child(1){
+    font-size: 1em;
+}
+.wind-container span:nth-child(2){
+    font-size: 1.4em;
+    letter-spacing: 1px;
+
+}
+
+.weather-gif {
+    border: 1px black solid;
+    height: 350px;
+    width: 380px;
+}
+/* Wind INFO END */
+/*  Weather Stats END  */
