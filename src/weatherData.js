@@ -1,29 +1,38 @@
-export function locationData(response) {
-  console.log(response);
+export function locationData(weatherData) {
   let location = document.querySelector(".location");
-  location.textContent = `${response.location.name}, ${response.location.country}`;
+  location.textContent = `${weatherData.location.name}, ${weatherData.location.country}`;
+  console.log(weatherData);
 }
-export function temperatureDataF(response) {
+export function temperatureDataF(weatherData) {
   let temperature = document.querySelector(".temperature");
-  temperature.textContent = `${response.current.temp_f}°F`;
+  temperature.textContent = `${weatherData.current.temp_f}°F`;
 }
-export function weatherCondition(response) {
+export function temperatureDataC(weatherData) {
+  let temperature = document.querySelector(".temperature");
+  temperature.textContent = `${weatherData.current.temp_c}°C`;
+}
+export function weatherCondition(weatherData) {
   let condition = document.querySelector(".condition");
-  condition.textContent = `${response.current.condition.text}`;
+  condition.textContent = `${weatherData.current.condition.text}`;
 }
-export function weatherFeeling(response) {
+export function weatherFeelingF(weatherData) {
   let feeling = document.querySelector(".feeling");
-  feeling.textContent = `${response.current.feelslike_f}°F`;
+  feeling.textContent = `${weatherData.current.feelslike_f}°F`;
 }
-export function weatherHumidity(response) {
+export function weatherFeelingC(weatherData) {
+  let feeling = document.querySelector(".feeling");
+  feeling.textContent = `${weatherData.current.feelslike_c}°C`;
+}
+export function weatherHumidity(weatherData) {
   let humidity = document.querySelector(".humidity");
-  humidity.textContent = `${response.current.humidity}%`;
+  humidity.textContent = `${weatherData.current.humidity}%`;
 }
-export function windSpeed(response) {
+export function windSpeed(weatherData) {
   let speed = document.querySelector(".wind-speed");
-  speed.textContent = `${response.current.wind_mph} mph`;
+  speed.textContent = `${weatherData.current.wind_mph} mph`;
 }
 
-export function weatherGif(response) {
+export function weatherGif(weatherData) {
   let img = document.querySelector(".weather-gif");
+  img.src = weatherData.current.condition.icon;
 }
