@@ -9,8 +9,8 @@
       <input type="text" id="location" placeholder="Enter location">
       <img src = "../src/images/search.svg" class="search-icon">
    </header>
+   <section id="top-container">
       <!--LOCATION INFO-->
-   <section id="weather-data-container">
     <section class="box1">
       <div class="location-container"> 
         <div class="location-img-container"><img src="../src/images/iconizer-location_on_FILL1_wght400_GRAD0_opsz48.svg" class="location-img"></div>
@@ -29,22 +29,22 @@
         </div>
       </div>
          <!--TEMP END-->
-         <!--TEMP CONVERT START-->
+         <!--TEMP CONVERT BUTTONS-->
          <div class="temp-convert-container">
           <button class="temp-convert fahrenheit" >°F</button>
           <button class="temp-convert celsius">°C</button>
          </div>
-          <!--TEMP CONVERT END-->
+          <!--TEMP CONVERT BUTTONS END-->
     </section> 
 
+     <!--MIDDLE PIC-->
     <section class="box2">
       <img class="weather-gif">
-
+    <div class="three-days"><p>Three day forecast</p></div>
     </section>
+     <!--MIDDLE PIC END-->
 
-
-
-    <section class="box3">
+      <section class="box3">
           <!--CONDITION START-->
       <div class="condition-container">
         <div class="condition-img"><img src="../src/images/iconizer-routine_FILL1_wght100_GRAD-25_opsz48.svg"></div>
@@ -70,10 +70,30 @@
         </div>
         <!--WIND INFO END-->
     </section>
-  
-   
-    
+   </section>
+   <section id="bottom-container">
+    <div class="forecast-container">
+      <div class="forecast">
+        <p class="forecast-day1">Thursday</p>
+        <img src="../src/images/cloudy.png" class="cloudy">
+        <span class="highest-temp-1">H:69.8°F</span>
+        <span class="lowest-temp-1">L:53.8°F</span>
+      </div>
 
+      <div class="forecast">
+          <p class="forecast-day2">Thursday</p>
+        <img src="../src/images/cloudy.png" class="cloudy">
+        <span class="highest-temp-2">H:69.8°F</span>
+        <span class="lowest-temp-2">L:53.8°F</span>
+      </div>
+        <div class="forecast">
+            <p class="forecast-day3">Thursday</p>
+        <img src="../src/images/cloudy.png" class="cloudy">
+        <span class="highest-temp-3">H:69.8°F</span>
+        <span class="lowest-temp-3">L:53.8°F</span>
+        </div>
+    </div>
+     
    </section>
     <script src="bundle.js"></script>
    </body>
