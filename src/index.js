@@ -7,9 +7,12 @@ import { weatherFeelingF } from "./weatherData";
 import { weatherFeelingC } from "./weatherData";
 import { weatherHumidity } from "./weatherData";
 import { windSpeed } from "./weatherData";
-import { weatherGif } from "./weatherData";
 import { temperatureDataC } from "./weatherData";
-getData("Paris");
+import { weatherImage } from "./weatherData";
+import { forecastData } from "./weatherData";
+import { displayError } from "./weatherData";
+import { forecastImages } from "./weatherData";
+getData("91910");
 
 //Get API weather data with 4 day forcast because im poor and cant afford a subscription
 async function getData(location) {
@@ -25,10 +28,10 @@ async function getData(location) {
       displayData();
     })
     .catch(function (err) {
-      console.log();
+        alert("ERROR,cannot find location!")
+          displayError()
     });
 }
-
 
 //storage for data received from weather API
 let responseData = (() => {
@@ -37,43 +40,22 @@ let responseData = (() => {
 })();
 //display data
 function displayData() {
-  let weatherData = responseData.weatherData
+  let weatherData = responseData.weatherData;
   locationData(weatherData);
   temperatureDataF(weatherData);
-  weatherGif(weatherData);
   weatherCondition(weatherData);
   weatherFeelingF(weatherData);
   weatherHumidity(weatherData);
+  weatherImage(weatherData)
   windSpeed(weatherData);
-  forecastData(weatherData)
-}
-//bottom 3 forecast data
-function forecastData(weatherData){
-  let dateArray = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
- for(let i = 1; i < weatherData.forecast.forecastday.length; i++){
-  let day = new Date(weatherData.forecast.forecastday[i].date);
-  let forecast = day.getDay()
-  let forecastDay = document.querySelector(`.forecast-day${i}`)
-  forecastDay.textContent = dateArray[forecast];
-  let highestTemp = document.querySelector(`.highest-temp-${i}`);
-  highestTemp.textContent = weatherData.forecast.forecastday[i].day.maxtemp_f;
-  let lowestTemp = document.querySelector(`.lowest-temp-${i}`);
-  lowestTemp.textContent = weatherData.forecast.forecastday[i].day.mintemp_f;
- }
-
-  
-  
+  forecastData(weatherData);
+  forecastImages(weatherData)
 }
 
- //EVENT LISTENERS for F AND C BUTTONS
+
+
+
+//EVENT LISTENERS for F AND C BUTTONS
 
 const tempButtons = (() => {
   const fahrenheitButton = document.querySelector(".fahrenheit");
