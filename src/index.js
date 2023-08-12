@@ -12,15 +12,14 @@ import { weatherImage } from "./weatherData";
 import { forecastData } from "./weatherData";
 import { displayError } from "./weatherData";
 import { forecastImages } from "./weatherData";
-getData("91910");
 
 //Get API weather data with 4 day forcast because im poor and cant afford a subscription
-async function getData(location) {
+function getData(location) {
   let url = `https://api.weatherapi.com/v1/forecast.json?key=154bc563fa33473cb2f81254231307&q=${location}&days=4`;
   fetch(url, {
     mode: "cors",
   })
-    .then(function (response) {
+    .then((response) => {
       return response.json();
     })
     .then(function (response) {
@@ -28,10 +27,12 @@ async function getData(location) {
       displayData();
     })
     .catch(function (err) {
-        alert("ERROR,cannot find location!")
-          displayError()
+      displayError();
     });
 }
+
+//default area on page load
+getData(91910);
 
 //storage for data received from weather API
 let responseData = (() => {
@@ -46,14 +47,11 @@ function displayData() {
   weatherCondition(weatherData);
   weatherFeelingF(weatherData);
   weatherHumidity(weatherData);
-  weatherImage(weatherData)
+  weatherImage(weatherData);
   windSpeed(weatherData);
   forecastData(weatherData);
-  forecastImages(weatherData)
+  forecastImages(weatherData);
 }
-
-
-
 
 //EVENT LISTENERS for F AND C BUTTONS
 
@@ -80,6 +78,6 @@ let location = (() => {
   });
 })();
 
-
+console.log("wadadwa");
 
  // EVENT LISTENERS END

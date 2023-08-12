@@ -82,26 +82,55 @@ export function returnWeather(weatherData) {
   }
 }
 
+
+function getDate(date) {
+  let d = new Date(date);
+  let day = d.getDay();
+  switch (day) {
+    case 0:
+      day = "Sunday";
+      break;
+    case 1:
+      day = "Monday";
+      break;
+    case 2:
+      day = "Tuesday";
+      break;
+    case 3:
+      day = "Wednesday";
+      break;
+    case 4:
+      day = "Thursday";
+      break;
+    case 5:
+      day = "Friday";
+      break;
+    case 6:
+      day = "Saturday";
+      break;
+  }
+  return day;
+}
+
 export function forecastData(weatherData) {
   let forecastContainer = document.querySelectorAll(".forecast-day");
   let highestTemp = document.querySelectorAll(".highest-temp");
   let lowestTemp = document.querySelectorAll(".lowest-temp");
   let weatherPath = weatherData.forecast.forecastday;
 
-  forecastContainer[0].textContent = new Date(
-    weatherPath[2].date
-  ).toDateString();
+  forecastContainer[0].textContent = weatherPath[1].date;
+
   highestTemp[0].textContent = `H:${weatherPath[1].day.maxtemp_f}F`;
   lowestTemp[0].textContent = `L:${weatherPath[1].day.mintemp_f}F`;
 
-  forecastContainer[1].textContent = new Date(
-    weatherPath[3].date
-  ).toDateString();
+  forecastContainer[1].textContent = weatherPath[2].date;
+
   highestTemp[1].textContent = `H:${weatherPath[2].day.maxtemp_f}F`;
   lowestTemp[1].textContent = `L:${weatherPath[2].day.mintemp_f}F`;
 }
 
 export function displayError() {
+  alert("ERROR,cannot find location!");
   let locationInput = document.querySelector("#location");
   locationInput.value = "";
 }

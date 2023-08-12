@@ -19,6 +19,7 @@
     "xml-loader": "^1.2.1"
   },
   "dependencies": {
+    "dayjs": "^1.11.9",
     "lodash": "^4.17.20"
   }
 }
